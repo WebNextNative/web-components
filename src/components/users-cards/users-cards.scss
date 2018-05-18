@@ -1,0 +1,100 @@
+h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.3rem;
+}
+ion-grid,
+ion-col {
+  padding: 0;
+}
+.ion-card {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+ion-col {
+  height: 180px;
+  position: relative;
+  border: 1px solid #000000; border-color: #ff0000 #0000ff;
+}
+
+.overlay,
+.content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, .4);
+}
+.content-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.content-wrapper h4,
+.content-wrapper p {
+  margin: 0;
+  color: #fff;
+}
+.content-wrapper p {
+  color: #efefef;
+}
+.content-badge {
+  justify-content: flex-start;
+  margin-top: 3px;
+  margin-left: 5px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.provider-badge {
+  justify-content: flex-start;
+  margin-top: 3px;
+  margin-right: 5px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.gender-badge {
+  justify-content: flex-start;
+  margin-top: 27px;
+  margin-right: 5px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.locale-badge {
+  justify-content: flex-start;
+  margin-top: 50px;
+  margin-right: 5px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.number {
+  color: #488aff;
+  margin-left: 10px;
+}
+
+.twitter {
+  background-color: #1dcaff
+}
+.facebook {
+  background-color: #3b5998
+}
+.google {
+  background-color: #d34836
+}
+.female {
+  background-color: #d34836
+}
+.male {
+  background-color: #3b5998
+}
