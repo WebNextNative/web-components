@@ -1,4 +1,5 @@
 import { Component } from '@stencil/core';
+import {users_cards} from "../users-cards/users-cards-model";
 
 
 @Component({
@@ -6,6 +7,11 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.scss'
 })
 export class AppHome {
+
+  componentWillLoad() {
+    window.localStorage.removeItem("users_cards")
+    window.localStorage.setItem("users_cards", JSON.stringify(users_cards))
+  }
 
   render() {
     return [
@@ -16,6 +22,11 @@ export class AppHome {
       </ion-header>,
 
       <ion-content>
+        <p>
+          <users-cards></users-cards>
+          <hr/>
+          <users-cards columns="4" ></users-cards>
+        </p>
         <p>
           Welcome to the Ionic PWA Toolkit.
           You can use this starter to build entire PWAs all with
