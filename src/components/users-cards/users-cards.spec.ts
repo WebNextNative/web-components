@@ -4,7 +4,7 @@ import {users_cards} from "./users-cards-model";
 
 /**
  *
- * localStorage mock
+ * localStorage fake
  */
 var localStorageMock = (() => {
   var store = {};
@@ -39,7 +39,7 @@ describe('users-cards', () => {
   describe('rendering', () => {
     let element;
     beforeEach(async () => {
-      
+
       // init card values
       window.localStorage.clear()
       window.localStorage.setItem("users_cards", JSON.stringify(users_cards))

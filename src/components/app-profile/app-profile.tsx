@@ -86,6 +86,7 @@ x
         <p>
           <users-cards></users-cards>
           <hr/>
+          <users-cards columns="4" ></users-cards>
         </p>
 
         {this.swSupport ? <ion-item>

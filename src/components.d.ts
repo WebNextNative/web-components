@@ -172,7 +172,6 @@ declare global {
   namespace StencilComponents {
     interface UsersCards {
       'columns': string;
-      'initComponent': (users_cards: any) => void;
     }
   }
 
@@ -196,7 +195,6 @@ declare global {
   namespace JSXElements {
     export interface UsersCardsAttributes extends HTMLAttributes {
       'columns'?: string;
-      'onInitCompleted'?: (event: CustomEvent) => void;
     }
   }
 }

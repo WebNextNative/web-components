@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Listen, Method, Prop, State, Event} from '@stencil/core';
+import {Component, Listen, Prop, State} from '@stencil/core';
 
 @Component({
   tag: 'users-cards',
@@ -9,25 +9,6 @@ export class UsersCards {
 
   @Prop() columns: string;
   @State() cardsPerRow: number;
-  @Event() initCompleted: EventEmitter;
-
-  getCardsPerRow(): number {
-    if(this.columns) {
-      this.cardsPerRow = +this.columns
-      return this.cardsPerRow;
-    } else {
-      return this.cardsPerRow;
-    }
-  }
-
-  @Method()
-  initComponent(users_cards) {
-    window.localStorage.removeItem("users_cards")
-    window.localStorage.setItem("users_cards", JSON.stringify(users_cards))
-
-    this.initCompleted.emit("done");
-    this.windowResize()
-  }
 
   @Listen('window:resize')
   windowResize() {
@@ -77,6 +58,15 @@ export class UsersCards {
     }
   }
 
+  getCardsPerRow(): number {
+    if(this.columns) {
+      this.cardsPerRow = +this.columns
+      return this.cardsPerRow;
+    } else {
+      return this.cardsPerRow;
+    }
+  }
+
   render() {
     return (
       <ion-grid class="ion-cards-container">
@@ -99,7 +89,7 @@ export class UsersCards {
                     </a>
                     <a>
                       <span class="number"><strong>{card.likes}</strong></span>
-                      <ion-icon  color="primary"name="flag"></ion-icon>
+                      <ion-icon color="primary" name="flag"></ion-icon>
                     </a>
                   </div>
                 </div>
@@ -134,7 +124,6 @@ export class UsersCards {
                       )
                     }
                   </div>
-
                   <div class="gender-badge">
                     { card.gender == 'female'
                       ? <ion-badge item-end class="female">
@@ -145,13 +134,11 @@ export class UsersCards {
                         </ion-badge>
                     }
                   </div>
-
                   <div class="locale-badge">
                     { card.country
                       ? <img src={'/assets/img/flags_iso/24/' + card.country + '.png'}/>
                       : <div/>
                     }
-
                   </div>
                 </div>
               </ion-col>
